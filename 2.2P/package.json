@@ -1,0 +1,14 @@
+{
+  "name": "sit725-task22p",
+  "version": "1.0.0",
+  "description": "SIT725 Task 2.2P - Express Web Server with basic calculator REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Akashdeep Singh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
