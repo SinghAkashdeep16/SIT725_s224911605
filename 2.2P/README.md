@@ -68,9 +68,4 @@ curl "http://localhost:3000/add?a=5&b=10"
 curl -X POST http://localhost:3000/calculate -H "Content-Type: application/json" -d "{\"num1\":5,\"num2\":3,\"operation\":\"add\"}"
 ```
 
-Or use the calculator page at http://localhost:3000 — pick numbers and an operation, hit Calculate.
 
-## Notes
-
-- If you type letters instead of numbers, it returns an error message instead of crashing.
-- The web page files are in `public/`.
