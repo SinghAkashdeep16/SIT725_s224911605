@@ -1,0 +1,12 @@
+{
+  "name": "plant-catalog-app",
+  "version": "1.0.0",
+  "description": "SIT725 3.2P - Express + Materialize plant catalog app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

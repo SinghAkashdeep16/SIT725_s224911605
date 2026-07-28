@@ -1,0 +1,65 @@
+.navbar-size {
+  width: 95%;
+  margin: 0 auto;
+}
+
+nav .brand-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+nav .brand-logo img {
+  display: block;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.main-body {
+  background-color: #2e7d32;
+  color: white;
+  min-height: calc(100vh - 64px);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#card-section {
+  margin-top: 30px;
+}
+
+.card-reveal {
+  color: black;
+}
+
+.card-reveal .card-title,
+.card-reveal p {
+  color: black;
+}
+
+.card .card-content .card-title {
+  font-size: 1.2rem;
+}
+
+.add-plant-button {
+  background-color: #1b5e20;
+  margin-top: 20px;
+}
+
+.chip-category {
+  background-color: #a5d6a7;
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+.card-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

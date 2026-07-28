@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Monstera Deliciosa",
+    "category": "Indoor",
+    "description": "Large split leaves, thrives in bright indirect light, easy to care for.",
+    "image": "/images/monstera.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Snake Plant",
+    "category": "Indoor",
+    "description": "Tough, low-maintenance succulent that tolerates low light and infrequent watering.",
+    "image": "/images/snake-plant.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Fiddle Leaf Fig",
+    "category": "Indoor",
+    "description": "Popular statement plant with large violin-shaped leaves, needs consistent light.",
+    "image": "/images/fiddle-leaf-fig.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Lavender",
+    "category": "Outdoor",
+    "description": "Fragrant purple flowers, drought-tolerant, loves full sun.",
+    "image": "/images/lavender.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Aloe Vera",
+    "category": "Succulent",
+    "description": "Medicinal succulent with thick gel-filled leaves, needs minimal watering.",
+    "image": "/images/aloe-vera.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Basil",
+    "category": "Herb",
+    "description": "Fast-growing culinary herb, great for kitchen windowsills.",
+    "image": "/images/basil.jpg"
+  }
+]
