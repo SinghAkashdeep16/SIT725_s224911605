@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Books Catalog</title>
+</head>
+<body>
+  <h1>Books Catalogue developed by s224911605</h1>
+  <p>Click the button below to get all books from the server:</p>
+  <button id="fetchBooksBtn">Get all books</button>
+
+  <ul id="booksList"></ul>
+
+  <div id="bookDetails"></div>
+
+  <script>
+    const btn = document.getElementById('fetchBooksBtn');
+    const listEl = document.getElementById('booksList');
+    const detailsEl = document.getElementById('bookDetails');
+
+    function getPrice(it) {
+      return typeof it.price === 'string'
+        ? it.price
+        : (it.price && it.price.$numberDecimal) || it.price || '';
+    }
+
+    function renderList(items) {
+      listEl.innerHTML = '';
+      if (!Array.isArray(items) || items.length === 0) {
+        listEl.textContent = 'No items';
+        return;
+      }
+      for (const it of items) {
+        const li = document.createElement('li');
+        li.textContent = `${it.title} ${getPrice(it)} AUD`;
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', () => fetchBookDetails(it.id));
+        listEl.appendChild(li);
+      }
+    }
+
+    function renderDetails(book) {
+      detailsEl.innerHTML = '';
+      if (!book) {
+        detailsEl.textContent = 'Book not found';
+        return;
+      }
+      const fields = [
+        ['Title', book.title],
+        ['Author', book.author],
+        ['Year', book.year],
+        ['Genre', book.genre],
+        ['Summary', book.summary],
+        ['Price (AUD)', getPrice(book)]
+      ];
+      for (const [label, value] of fields) {
+        const p = document.createElement('p');
+        p.textContent = `${label}: ${value}`;
+        detailsEl.appendChild(p);
+      }
+    }
+
+    async function fetchBookDetails(id) {
+      detailsEl.textContent = 'Loading...';
+      try {
+        const res = await fetch(`/api/books/${id}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const body = await res.json();
+        renderDetails(body.data);
+      } catch (err) {
+        console.error('Error fetching book details:', err);
+        detailsEl.textContent = 'Error fetching book details.';
+      }
+    }
+
+    btn.addEventListener('click', async () => {
+      listEl.textContent = 'Loading...';
+      detailsEl.innerHTML = '';
+      try {
+        const res = await fetch('/api/books');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const body = await res.json();
+        renderList(body.data);
+      } catch (err) {
+        console.error('Error fetching books:', err);
+        listEl.textContent = 'Error fetching books.';
+      }
+    });
+  </script>
+</body>
+</html>
