@@ -1,0 +1,22 @@
+{
+  "name": "sit725-5-1p-books-db",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node scripts/seed.js",
+    "test": "mocha --reporter spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "SIT725 5.1P - MVC Books Catalog with MongoDB",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.19.2"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "chai-http": "^4.4.0",
+    "mocha": "^11.8.0"
+  }
+}
